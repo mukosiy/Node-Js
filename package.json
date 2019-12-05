@@ -7,5 +7,27 @@
     "test": "start"
   },
   "author": "Mukosiy",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "husky": "^3.1.0",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1"
+
+    
+  },
+
+   "husky": { 
+     "hooks": { 
+       "precommit": "npm run prettier",
+       "prepush": "npm run test"
+     }
+  }
 }
+
+
+
+
