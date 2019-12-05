@@ -1,0 +1,59 @@
+<HTML>
+
+    <HEAD>
+        <meta charset="utf-8">
+        <TITLE>Переставляння зображень</TITLE>
+        <script>
+            function chan(obj) {
+                let r1 = Number(obj.a1.value)
+                if ((r1 < 1) || (r1 > 3))
+                    alert("Неправильно задані номери зображень!")
+                else {
+                    let z = document.images[2].src;
+                    document.images[2].src = document.images[r1 - 1].src;
+                    document.images[r1 - 1].src = z;
+                }
+            }
+            function changeSize(num, width, height) {
+                document.images[num].width = width;
+                document.images[num].height = height;
+            }
+            function setArrow(num, mode){
+                let a = document.getElementById("arr"+num);
+                a.style.opacity = mode;
+            }
+        </script>
+    </HEAD>
+    
+    <BODY>
+        <CENTER>
+            <p>Галерея малюнків</p>
+            <IMG src="pic/p1.jpg" width="90" name="pic1" alt="pic1"></IMG><br>
+            <IMG src="pic/p2.jpg" width="90" name="pic2" alt="pic2"></IMG><br>
+            <IMG src="pic/p3.jpg" width="90" name="pic3" alt="pic3"></IMG> <br>
+            <FORM name=form1>
+                Зображення з номером<br>
+                <input type="text" name="a1" size=1>
+                <P><input type="button" value="Переставити" onClick="chan(form1)"></P>
+            </FORM>
+    
+            <p>Increasing size</p>
+            <IMG src="pic/p1.jpg" width="90" height="90" name="pic1" alt="pic1" onMouseOver="changeSize(3, 120, 250)" onMouseOut="changeSize(3, 90, 90)"></IMG>
+            <IMG src="pic/p2.jpg" width="90" height="90" name="pic2" alt="pic2" onMouseOver="changeSize(4, 120, 250)" onMouseOut="changeSize(4, 90, 90)"></IMG>
+            <IMG src="pic/p3.jpg" width="90" height="90" name="pic3" alt="pic3" onMouseOver="changeSize(5, 120, 250)" onMouseOut="changeSize(5, 90, 90)"></IMG><br>
+    
+            <H2>Зміст</H2>
+            <img src="pic/arrow.png" width="50" height="50" style="opacity: 0" id="arr1"><br> 
+            <A href="" onmouseover="setArrow(1,1)" onmouseout="setArrow(1,0)">
+                <IMG src="pic/pch1.jpg" аlt="p1" border="0" width="200" height="150"></IMG></A><br>
+            <img src="pic/arrow.png" width="50" height="50" style="opacity: 0" id="arr2"><br>
+            <A href="" onmouseover="setArrow(2,1)" onmouseout="setArrow(2,0)">
+                <IMG src="pic/pch2.jpg" аlt="p2" border="0" width="200" height="150"></IMG></A><br>
+            <img src="pic/arrow.png" width="50" height="50" style="opacity: 0" id="arr3"><br>
+            <A href="" onmouseover="setArrow(3,1)" onmouseout="setArrow(3,0)">
+                <IMG src="pic/pch3.jpg" аlt="p3" border="0" width="200" height="150"></IMG></A><br>
+        </CENTER>
+    
+    </BODY>
+    
+    </HTML>
