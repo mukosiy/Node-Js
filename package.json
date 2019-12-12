@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "lint": "eslint --ignore-path .gitignore",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
+    "test": "eslint .",
+    "start": "node index.js"
   },
   "author": "Mukosiy",
   "license": "ISC",
