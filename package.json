@@ -5,14 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "test": "eslint .",
     "start": "node index.js"
   },
   "author": "Mukosiy",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^7.6.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
